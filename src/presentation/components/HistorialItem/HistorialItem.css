@@ -1,0 +1,127 @@
+.historial-item {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  padding: 1.2rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 90%;
+  min-width: 0;
+  max-width: 700px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+/* Responsive igual que depositos-list */
+@media (max-width: 1400px) {
+  .historial-item {
+    width: 95%;
+    max-width: 600px;
+    padding: 1rem 0.8rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .historial-item {
+    width: 98%;
+    max-width: 98%;
+    padding: 0.8rem 0.6rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .historial-item {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.7rem 0.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .historial-item {
+    padding: 1rem 0.75rem;
+  }
+}
+
+.historial-item:hover {
+  transform: translateY(-2px);
+}
+
+.historial-owner {
+  flex-shrink: 0;
+}
+
+.historial-owner-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.historial-owner-placeholder {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+}
+
+.historial-item svg {
+  color: var(--text-white);
+}
+
+.historial-game {
+  font-weight: 500;
+  color: var(--text-white);
+  flex: 1;
+}
+
+.historial-divider {
+  color: var(--text-gray);
+}
+
+.historial-amount {
+  font-weight: 600;
+  color: var(--text-white);
+}
+@media (max-width: 1400px) {
+  .historial-item {
+    width: 320px;
+    height: 64px;
+    padding: 0.6rem 0.7rem;
+  }
+  .historial-owner-img, .historial-owner-placeholder {
+    width: 36px;
+    height: 36px;
+  }
+  .historial-game, .historial-amount {
+    font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .historial-item {
+    width: 220px;
+  }
+}
+
+@media (max-width: 900px) {
+  .historial-item {
+    width: 100%;
+    min-width: 0;
+    height: 54px;
+    padding: 0.45rem 0.5rem;
+  }
+  .historial-owner-img, .historial-owner-placeholder {
+    width: 28px;
+    height: 28px;
+  }
+  .historial-game, .historial-amount {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: var(--darker-bg);
+  overflow: hidden;
+}
+
+/* Permitir scroll en móvil */
+@media (max-width: 768px) {
+  .container {
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+    flex-direction: column;
+  }
+}
+
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--darker-bg);
+}
+
+.loading-spinner {
+  color: var(--text-white);
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,103 @@
+/* Contenedor con scroll oculto para las cards de depósito */
+.depositos-scroll-container {
+  max-height: 87vh;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+}
+.depositos-scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+.depositos-page-section {
+  margin-bottom: 3rem;
+}
+
+.depositos-page-content {
+  background-color: var(--dark-bg);
+  border-radius: 20px;
+  padding: 2rem;
+  color: var(--text-white);
+}
+
+.depositos-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.deposit-item {
+  display: flex;
+  align-items: center;
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  gap: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.deposit-item:hover {
+  transform: translateY(-2px);
+}
+
+.deposit-avatar {
+  flex-shrink: 0;
+}
+
+.deposit-avatar-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.deposit-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.deposit-user-name {
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.deposit-note {
+  color: var(--text-gray);
+  font-size: 0.875rem;
+}
+
+.deposit-details {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.deposit-amount {
+  color: var(--text-white);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.deposit-date {
+  color: var(--text-gray);
+  font-size: 0.875rem;
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .depositos-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .depositos-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .deposit-item {
+    padding: 1.5rem 1rem;
+  }
+}

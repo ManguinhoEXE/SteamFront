@@ -1,0 +1,49 @@
+.deposito-card {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  padding: 0.75rem 0rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.deposito-card:hover {
+  transform: translateY(-2px);
+}
+
+.deposito-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--text-white);
+}
+
+.deposito-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.deposito-amount {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-white);
+}
+
+.deposito-date {
+  font-size: 0.85rem;
+  color: var(--text-gray);
+}
+
+.deposito-arrow {
+  color: var(--text-white);
+  flex-shrink: 0;
+}

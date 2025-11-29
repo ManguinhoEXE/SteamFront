@@ -1,0 +1,54 @@
+/* Centrar vertical y horizontalmente el contenedor */
+.depositos-form-page {
+  max-width: 400px;
+  min-height: 320px;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #181c24;
+  border-radius: 12px;
+  padding: 1.5rem 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.depositos-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+.depositos-form select,
+.depositos-form input {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #23272f;
+  background: #23272f;
+  color: #fff;
+}
+.depositos-form button {
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: none;
+  background: var(--accent-green, #00ff5e);
+  color: #181c24;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.depositos-form button:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+.success-msg {
+  color: #00ff5e;
+  font-size: 0.95rem;
+}
+.error-msg {
+  color: #e53935;
+  font-size: 0.95rem;
+}

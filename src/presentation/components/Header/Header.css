@@ -1,0 +1,47 @@
+/* Imagen del header más grande y redonda */
+.header-gamepad {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  border: 3px solid #03ff96;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-white);
+}
+
+/* Media query para centrar título en móvil */
+@media (max-width: 768px) {
+  .header {
+    justify-content: center;
+    position: relative;
+  }
+
+  .header-title {
+    text-align: center;
+  }
+
+  .header-icon {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.header-icon {
+  color: var(--accent-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
