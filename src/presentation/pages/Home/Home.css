@@ -1,10 +1,8 @@
-/* Negrita y sombra para todos los textos y números de la app */
 body, .main-content, .section-title, .balance-section, .historial-section, .depositos-section, .balance-card, .balance-card *, .historial-list, .historial-list *, .depositos-grid, .depositos-grid *, .home-deposit-item, .home-deposit-item *, .home-deposit-amount, .home-deposit-date, .balance-amount, .balance-avatar, .balance-avatar-img, .balance-card span, .balance-card div, .balance-card p, .balance-card h1, .balance-card h2, .balance-card h3, .balance-card h4, .balance-card h5, .balance-card h6, .historial-item, .historial-item *, .deposito-card, .deposito-card *, .header, .header *, .spinner, .spinner *, .propuestas-section, .propuestas-section *, .propuestas-card, .propuestas-card * {
   font-weight: bold !important;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.5), 0 0 2px #000 !important;
 }
 
-/* Quitar negrita y sombra de los textos de la sidebar */
 .nav-button, .nav-button.active {
   font-weight: 600 !important;
   text-shadow: none !important;
@@ -78,10 +76,10 @@ body, .main-content, .section-title, .balance-section, .historial-section, .depo
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 .historial-list::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 .depositos-section {
@@ -105,7 +103,7 @@ body, .main-content, .section-title, .balance-section, .historial-section, .depo
 }
 
 .depositos-grid::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 @media (max-width: 1200px) {
@@ -173,7 +171,6 @@ body, .main-content, .section-title, .balance-section, .historial-section, .depo
   }
 }
 
-/* Home Deposit Item Styles */
 .home-deposit-item {
   display: flex;
   align-items: center;

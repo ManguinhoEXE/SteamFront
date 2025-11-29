@@ -102,7 +102,6 @@
   text-decoration: none;
 }
 
-/* Botón hamburguesa - oculto por defecto, visible en móvil */
 .hamburger-button {
   display: none;
   position: fixed;
@@ -135,7 +134,6 @@
   background-color: var(--card-bg);
 }
 
-/* Overlay oscuro detrás del menú */
 .menu-overlay {
   display: none;
   position: fixed;
@@ -147,7 +145,7 @@
   z-index: 999;
 }
 
-/* Media query para pantallas pequeñas */
+
 @media (max-width: 768px) {
   .hamburger-button {
     display: flex;

@@ -5,7 +5,6 @@
   overflow: hidden;
 }
 
-/* Permitir scroll en móvil */
 @media (max-width: 768px) {
   .container {
     height: auto;

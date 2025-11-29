@@ -1,4 +1,4 @@
-/* Imagen del header más grande y redonda */
+
 .header-gamepad {
   width: 70px;
   height: 70px;
@@ -21,7 +21,7 @@
   color: var(--text-white);
 }
 
-/* Media query para centrar título en móvil */
+
 @media (max-width: 768px) {
   .header {
     justify-content: center;

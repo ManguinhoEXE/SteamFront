@@ -17,10 +17,8 @@ export const Compras = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [comprandoId, setComprandoId] = useState(null);
-  // Oferta
   const [oferta, setOferta] = useState(false);
   const [precioOriginal, setPrecioOriginal] = useState('');
-  // Usuarios para el select
   const [allUsers, setAllUsers] = useState([]);
   const [selectedOwnerId, setSelectedOwnerId] = useState('');
 
@@ -55,11 +53,14 @@ export const Compras = () => {
         }
         body = { was_on_sale: true, original_price: original };
       }
-      await purchaseService.createFromProposal(proposalId, body);
+      const nuevaCompra = await purchaseService.createFromProposal(proposalId, body);
       setSuccess('Compra realizada con éxito');
-      // Refresca compras
-      const comprasData = await purchaseService.getAllPurchases();
-      setCompras(Array.isArray(comprasData) ? comprasData : []);
+      if (nuevaCompra && nuevaCompra.id) {
+        setCompras(prev => [...prev, nuevaCompra]);
+      } else {
+        const comprasData = await purchaseService.getAllPurchases();
+        setCompras(Array.isArray(comprasData) ? comprasData : []);
+      }
     } catch (err) {
       setError('Error al comprar juego por propuesta');
     } finally {
@@ -73,7 +74,6 @@ export const Compras = () => {
     setError('');
     setSuccess('');
     try {
-      // Validar y convertir el precio a número
       const priceNumber = Number(manualPrice);
       if (!manualTitle.trim() || isNaN(priceNumber) || priceNumber <= 0 || !selectedOwnerId) {
         setError('Título, precio válido y propietario son requeridos');

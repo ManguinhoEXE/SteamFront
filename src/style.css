@@ -39,7 +39,6 @@ html {
   height: 100vh;
 }
 
-/* Permitir scroll en móvil */
 @media (max-width: 768px) {
   body,
   html {

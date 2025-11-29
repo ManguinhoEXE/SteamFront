@@ -14,7 +14,7 @@
   box-sizing: border-box;
   overflow: hidden;
 }
-/* Responsive igual que depositos-list */
+
 @media (max-width: 1400px) {
   .historial-item {
     width: 95%;

@@ -1,20 +1,18 @@
-/* Scroll vertical para la tabla de historial de compras en la sección de compras */
 .compras-historial-list {
   max-height: 50vh;
   overflow-y: auto;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 .compras-historial-list::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none; 
 }
-/* Contenedor con scroll oculto para historial de compras */
 .historial-scroll-container {
   max-height: 87vh;
   overflow-y: auto;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 .historial-scroll-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 .historial-page-section {
   margin-bottom: 3rem;
@@ -34,10 +32,10 @@
   gap: 1rem;
   max-height:87vh;
   overflow-y: auto;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 .historial-page-section .historial-list::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 @media (max-width: 1200px) {
   .historial-page-section .historial-list {
@@ -131,7 +129,6 @@
   border: 2px solid var(--accent-green);
 }
 
-/* Mobile responsive */
 @media (max-width: 768px) {
   .historial-list {
     grid-template-columns: 1fr;
@@ -142,7 +139,6 @@
   }
 }
 
-/* Modal Styles */
 .modal-overlay {
   position: fixed;
   top: 0;

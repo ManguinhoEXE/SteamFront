@@ -22,7 +22,6 @@ export const Historial = ({ userName }) => {
           authService.getAllUsers()
         ]);
         
-        // Crear mapa de usuarios para acceso rápido
         const usersMap = {};
         usersData.forEach(user => {
           usersMap[user.id] = user;

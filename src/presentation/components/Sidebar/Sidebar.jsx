@@ -61,14 +61,12 @@ export const Sidebar = ({ userName, activeTab }) => {
 
   return (
     <>
-      {/* Botón hamburguesa - solo visible en móvil */}
       <button className="hamburger-button" onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
       </button>
 
-      {/* Overlay - solo visible cuando el menú está abierto en móvil */}
       {isMenuOpen && <div className="menu-overlay" onClick={closeMenu}></div>}
 
       <aside className={`sidebar ${isMenuOpen ? 'menu-open' : ''}`}>

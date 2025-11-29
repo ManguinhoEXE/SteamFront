@@ -1,11 +1,10 @@
-/* Contenedor con scroll oculto para las cards de depósito */
 .depositos-scroll-container {
   max-height: 87vh;
   overflow-y: auto;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 .depositos-scroll-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 .depositos-page-section {
   margin-bottom: 3rem;

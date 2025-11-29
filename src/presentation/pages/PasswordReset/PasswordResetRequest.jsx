@@ -16,9 +16,8 @@ export default function PasswordResetRequest() {
       const res = await fetch(`${API_BASE_URL}/auth/password-reset-request`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
-        // Si necesitas enviar cookies, agrega credentials: 'include'
-        // credentials: 'include',
+        body: JSON.stringify({ email }),
+        credentials: 'include',
       });
       const data = await res.json();
       if (res.ok) {

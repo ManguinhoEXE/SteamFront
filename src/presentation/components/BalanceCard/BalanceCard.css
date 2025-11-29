@@ -40,7 +40,7 @@
   color: var(--text-white);
   text-shadow: 1px 1px 4px rgba(0,0,0,0.5), 0 0 2px #000;
 }
-/* Negrita y sombra para todos los textos dentro de la card */
+
 .balance-card,
 .balance-card * {
   font-weight: bold !important;

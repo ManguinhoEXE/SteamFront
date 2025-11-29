@@ -3,7 +3,6 @@ import '../Login/Login.css';
 import { supabase } from '../../../data/api/supabaseClient';
 
 function getParamsFromUrl() {
-  // Busca en search y hash
   const params = new URLSearchParams(window.location.search);
   let access_token = params.get('access_token') || params.get('token');
   let refresh_token = params.get('refresh_token');
@@ -18,6 +17,8 @@ function getParamsFromUrl() {
 export default function PasswordResetConfirm() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -41,9 +42,7 @@ export default function PasswordResetConfirm() {
       }
     }
     setSupabaseSession();
-    // eslint-disable-next-line
   }, []);
-  // console.log('Token detectado en URL:', access_token, refresh_token);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -55,7 +54,6 @@ export default function PasswordResetConfirm() {
     }
     setLoading(true);
     try {
-      // Cambia la contraseña usando el SDK de Supabase
       const { error } = await supabase.auth.updateUser({ password });
       if (error) {
         setError(error.message || 'Error al restablecer la contraseña.');
@@ -97,29 +95,87 @@ export default function PasswordResetConfirm() {
           <form className="login-form" onSubmit={handleSubmit}>
             {error && <div className="reset-message" style={{ color: '#ff4d4f', fontWeight: 600 }}>{error}</div>}
             {message && <div className="reset-message" style={{ color: '#19c37d', fontWeight: 700 }}>{message}</div>}
-            <div className="form-group">
+            <div className="form-group" style={{ position: 'relative' }}>
               <label htmlFor="password">Nueva contraseña</label>
               <input
                 id="password"
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 className="form-input"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
                 required
                 disabled={loading}
+                style={{ paddingRight: '2.5rem' }}
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword((v) => !v)}
+                style={{
+                  position: 'absolute',
+                  right: '0.7rem',
+                  top: '70%',
+                  transform: 'translateY(-50%)',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  color: '#222',
+                  padding: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '2rem',
+                  width: '2rem'
+                }}
+                tabIndex={-1}
+                aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+              >
+                {showPassword ? (
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="12" rx="8" ry="5"/><circle cx="12" cy="12" r="2.5"/><line x1="8.5" y1="15.5" x2="15.5" y2="8.5" stroke="#222" strokeWidth="2.5"/></svg>
+                ) : (
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="12" rx="8" ry="5"/><circle cx="12" cy="12" r="2.5"/></svg>
+                )}
+              </button>
             </div>
-            <div className="form-group">
+            <div className="form-group" style={{ position: 'relative' }}>
               <label htmlFor="confirmPassword">Confirmar contraseña</label>
               <input
                 id="confirmPassword"
-                type="password"
+                type={showConfirmPassword ? 'text' : 'password'}
                 className="form-input"
                 value={confirmPassword}
                 onChange={e => setConfirmPassword(e.target.value)}
                 required
                 disabled={loading}
+                style={{ paddingRight: '2.5rem' }}
               />
+              <button
+                type="button"
+                onClick={() => setShowConfirmPassword((v) => !v)}
+                style={{
+                  position: 'absolute',
+                  right: '0.7rem',
+                  top: '70%',
+                  transform: 'translateY(-50%)',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  color: '#222',
+                  padding: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '2rem',
+                  width: '2rem'
+                }}
+                tabIndex={-1}
+                aria-label={showConfirmPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
+              >
+                {showConfirmPassword ? (
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="12" rx="8" ry="5"/><circle cx="12" cy="12" r="2.5"/><line x1="8.5" y1="15.5" x2="15.5" y2="8.5" stroke="#222" strokeWidth="2.5"/></svg>
+                ) : (
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="12" rx="8" ry="5"/><circle cx="12" cy="12" r="2.5"/></svg>
+                )}
+              </button>
             </div>
             <button type="submit" className="login-button" disabled={loading}>
               {loading ? 'Enviando...' : 'Restablecer'}

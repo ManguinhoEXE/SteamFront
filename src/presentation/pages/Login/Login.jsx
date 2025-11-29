@@ -22,7 +22,6 @@ export const Login = () => {
       if (!result.success) {
         setError(result.error);
       }
-      // Si es exitoso, el AuthContext manejará el redirect
     } catch (err) {
       setError('Error de conexión con el servidor');
     } finally {

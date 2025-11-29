@@ -8,7 +8,6 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Verificar autenticación solo en rutas protegidas
   useEffect(() => {
     const publicRoutes = [
       '/login',
@@ -79,7 +78,6 @@ export const AuthProvider = ({ children }) => {
       setIsAuthenticated(false);
     } catch (error) {
       console.error('Error en logout:', error);
-      // Limpiar de todas formas
       setUser(null);
       setIsAuthenticated(false);
     }

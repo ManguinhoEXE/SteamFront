@@ -1,4 +1,3 @@
-/* CheckIcon.jsx - simple check icon for voting */
 import React from 'react';
 
 export const CheckIcon = ({ size = 24, color = '#4caf50' }) => (

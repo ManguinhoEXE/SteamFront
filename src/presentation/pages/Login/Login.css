@@ -1,4 +1,4 @@
-/* Quitar el borde al enfocar el botón de mostrar/ocultar contraseña */
+
 .form-group button[aria-label] {
   outline: none;
   box-shadow: none;
@@ -7,7 +7,7 @@
   outline: none;
   box-shadow: none;
 }
-/* Link de olvido de contraseña en blanco */
+
 a[href="/password-reset-request"] {
   color: var(--text-white) !important;
   text-shadow: none !important;
@@ -179,7 +179,6 @@ a[href="/password-reset-request"] {
   }
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .login-card {
     grid-template-columns: 1fr;

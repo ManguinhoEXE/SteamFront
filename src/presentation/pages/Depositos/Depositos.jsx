@@ -14,13 +14,11 @@ export const Depositos = ({ userName }) => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        // Cargar todos los depósitos y usuarios
         const [depositsData, usersData] = await Promise.all([
           depositService.getAllDeposits(),
           authService.getAllUsers()
         ]);
         
-        // Crear mapa de usuarios para acceso rápido
         const usersMap = {};
         usersData.forEach(user => {
           usersMap[user.id] = user;

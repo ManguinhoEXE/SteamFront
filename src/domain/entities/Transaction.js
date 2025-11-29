@@ -4,6 +4,6 @@ export class Transaction {
     this.game = game;
     this.amount = amount;
     this.date = date;
-    this.type = type; // 'historial' | 'deposito'
+    this.type = type;
   }
 }
